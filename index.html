@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informativo do Atendimento - STTE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Informativo do Atendimento - STTE</h1>
+
+        <form id="stteForm">
+            <label>Empresa:</label>
+            <select id="empresa">
+                <option value="SERVIÇOS TÉCNICOS DE TELECOMUNICAÇÕES E EMPREENDIMENTOS LTDA">SERVIÇOS TÉCNICOS DE TELECOMUNICAÇÕES E EMPREENDIMENTOS LTDA</option>
+                <option value="CLARO">CLARO</option>
+            </select>
+
+            <label>Técnico:</label>
+            <input type="text" id="tecnico" placeholder="DIGITE O TÉCNICO">
+
+            <label>Site:</label>
+            <input type="text" id="site" placeholder="DIGITE O SITE">
+
+            <label>Vandalismo:</label>
+            <select id="vandalismo" onchange="toggleVandalismo()">
+                <option value="NAO">NÃO</option>
+                <option value="SIM">SIM</option>
+            </select>
+
+            <div id="vandalismoDetails" class="hidden">
+                <label>AMI:</label>
+                <input type="text" id="amiVandalismo" placeholder="DIGITE O AMI">
+
+                <label>Data e Hora:</label>
+                <input type="datetime-local" id="dataHoraVandalismo">
+
+                <label>Cabos / MTS:</label>
+                <input type="text" id="cabos" placeholder="DIGITE CABOS / MTS">
+
+                <label>Tipo / Vias:</label>
+                <input type="text" id="tipo" placeholder="DIGITE TIPO / VIAS">
+
+                <label>Baterias:</label>
+                <input type="text" id="modeloBateria" placeholder="DIGITE O MODELO">
+                <input type="number" id="quantidadeBateria" placeholder="DIGITE A QUANTIDADE">
+
+                <label>Gradil:</label>
+                <select id="gradil">
+                    <option value="SIM">SIM</option>
+                    <option value="NAO">NÃO</option>
+                </select>
+
+                <label>QTM:</label>
+                <select id="qtm">
+                    <option value="SIM">SIM</option>
+                    <option value="NAO">NÃO</option>
+                </select>
+
+                <label>Caixa de Passagem:</label>
+                <select id="caixaPassagem">
+                    <option value="SIM">SIM</option>
+                    <option value="NAO">NÃO</option>
+                </select>
+
+                <label>Relatório:</label>
+                <input type="text" id="relatorio" placeholder="DIGITE O RELATÓRIO">
+            </div>
+
+            <div id="nonVandalismoDetails">
+                <label>AMI:</label>
+                <input type="text" id="ami" placeholder="DIGITE O AMI">
+
+                <label>Data do Acionamento:</label>
+                <input type="date" id="dataAcionamento">
+
+                <label>Hora do Acionamento:</label>
+                <input type="time" id="horaAcionamento">
+
+                <label>Início do Atendimento:</label>
+                <input type="time" id="inicioAtendimento">
+
+                <label>Falha:</label>
+                <input type="text" id="falha" placeholder="DIGITE A FALHA">
+
+                <label>Causa:</label>
+                <input type="text" id="causa" placeholder="DIGITE A CAUSA">
+
+                <label>Relatório:</label>
+                <input type="text" id="relatorioNaoVandalismo" placeholder="DIGITE O RELATÓRIO">
+
+                <label>Fim do Atendimento:</label>
+                <input type="time" id="fimAtendimento">
+
+                <label>Fim do Deslocamento:</label>
+                <input type="time" id="fimDeslocamento">
+            </div>
+
+            <button type="button" onclick="gerarRelatorio()">Gerar Relatório</button>
+            <button type="button" onclick="copiarRelatorio()">Copiar Relatório</button>
+        </form>
+
+        <div id="resultado"></div>
+        <button type="button" onclick="toggleTheme()">Alternar Modo Claro/Escuro</button>
+        <footer>
+            <p>Desenvolvido por Thayson Silva - NOC - STTE - thalyson.silva.pa@stte.com.br</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
